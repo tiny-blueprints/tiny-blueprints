@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+
+  "npmClient": "yarn",
+  "useNx": true,
+  "useWorkspaces": true,
+
+  "packages": [
+    "packages/*"
+  ],
+  "command": {
+    "publish": {
+      "allowBranch": ["master", "release/*"],
+      "bump": "patch",
+      "conventionalCommits": true,
+      "message": "chore(release): Publish"
+    }
+  },
+  "registry": "https://registry.npmjs.org/",
+  "ignoreChanges": [
+    "CHANGELOG.md",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/__fixtures__/**"
+  ],
+  "version": "independent"
+}
